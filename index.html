@@ -7,36 +7,46 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      color: #333;
     }
 
     header {
       background-color: #003366;
-      color: white;
-      padding: 20px;
+      color: #fff;
+      padding: 30px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
-      margin: 0 0 10px;
-      font-size: 24px;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
 
     .profile {
+      background: #fff;
       max-width: 900px;
       margin: 0 auto;
-      text-align: left;
-      font-size: 14px;
-      line-height: 1.6;
-      padding: 0 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+      padding: 20px;
+      line-height: 1.8;
+      font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile p {
+      margin-bottom: 8px;
     }
 
     main {
@@ -44,20 +54,37 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     canvas {
       width: 100%;
       max-width: 800px;
       height: auto;
-      border: 3px solid #2c3e50;
       background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
+      border: 2px solid #2c3e50;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease;
     }
 
-    @media (max-width: 600px) {
+    canvas:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .profile {
+        font-size: 14px;
+        padding: 15px;
+        margin: 20px 10px 0;
+      }
+    }
+
+    @media (max-width: 480px) {
       header h1 {
         font-size: 18px;
       }
@@ -75,17 +102,18 @@
 <body>
   <header>
     <h1>Canvas Circle Interaction Program</h1>
-    <div class="profile">
-      <p><strong>Complete Name:</strong> Jhon Mico V. Frondozo</p>
-      <p><strong>Sex:</strong> Male</p>
-      <p><strong>Address:</strong> Boclod, San Jose, Camarines Sur</p>
-      <p><strong>Course, Year, and Section:</strong> BSIT - 2A</p>
-      <p><strong>Name of School:</strong> Partido State University</p>
-      <p><strong>Semester and Academic Year:</strong> 2nd Semester, AY 2024–2025</p>
-      <p><strong>Subject Code and Title:</strong> PF2 - Event Driven Programming</p>
-      <p><strong>Name of Subject Instructor:</strong> Mr. Arjay F. Abio</p>
-    </div>
   </header>
+
+  <div class="profile">
+    <p><strong>Complete Name:</strong> Jhon Mico V. Frondozo</p>
+    <p><strong>Sex:</strong> Male</p>
+    <p><strong>Address:</strong> Boclod, San Jose, Camarines Sur</p>
+    <p><strong>Course, Year, and Section:</strong> BSIT - 2A</p>
+    <p><strong>Name of School:</strong> Partido State University</p>
+    <p><strong>Semester and Academic Year:</strong> 2nd Semester, AY 2024–2025</p>
+    <p><strong>Subject Code and Title:</strong> PF2 - Event Driven Programming</p>
+    <p><strong>Name of Subject Instructor:</strong> Mr. Arjay F. Abio</p>
+  </div>
 
   <main>
     <canvas id="canvas" width="800" height="500"></canvas>
