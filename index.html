@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Canvas Circles</title>
+  <title>Canvas Circle Interaction</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,98 +13,70 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      background: linear-gradient(to bottom right, #004e92, #000428);
+      color: #fff;
       display: flex;
       flex-direction: column;
+      align-items: center;
       min-height: 100vh;
-      color: #333;
+      padding: 30px 15px;
     }
 
-    header {
-      background-color: #003366;
-      color: #fff;
-      padding: 30px 20px;
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 25px;
     }
 
-    header h1 {
-      font-size: 28px;
+    .profile-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      padding: 25px 30px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .profile-card p {
       margin-bottom: 10px;
     }
 
-    .profile {
-      background: #fff;
-      max-width: 900px;
-      margin: 0 auto;
-      margin-top: 20px;
-      border-radius: 8px;
-      padding: 20px;
-      line-height: 1.8;
-      font-size: 15px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .profile p {
-      margin-bottom: 8px;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 20px;
+    .profile-card strong {
+      color: #ffffff;
+      font-weight: 600;
     }
 
     canvas {
+      margin-top: 30px;
       width: 100%;
       max-width: 800px;
       height: auto;
-      background-color: #ffffff;
-      border: 2px solid #2c3e50;
+      background-color: #fff;
+      border: none;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-      transition: box-shadow 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
-    canvas:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 22px;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
       }
 
-      .profile {
+      .profile-card {
+        padding: 20px;
         font-size: 14px;
-        padding: 15px;
-        margin: 20px 10px 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 18px;
-      }
-
-      .profile {
-        font-size: 13px;
-      }
-
-      canvas {
-        max-width: 95%;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Canvas Circle Interaction Program</h1>
-  </header>
+  <h1>Canvas Circle Interaction</h1>
 
-  <div class="profile">
+  <div class="profile-card">
     <p><strong>Complete Name:</strong> Jhon Mico V. Frondozo</p>
     <p><strong>Sex:</strong> Male</p>
     <p><strong>Address:</strong> Boclod, San Jose, Camarines Sur</p>
@@ -115,9 +87,7 @@
     <p><strong>Name of Subject Instructor:</strong> Mr. Arjay F. Abio</p>
   </div>
 
-  <main>
-    <canvas id="canvas" width="800" height="500"></canvas>
-  </main>
+  <canvas id="canvas" width="800" height="500"></canvas>
 
   <script src="script.js"></script>
 </body>
